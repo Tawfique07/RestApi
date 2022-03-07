@@ -9,22 +9,21 @@
 //External Imports
 const express = require("express");
 
-
 //Router Imports
-const dishRouter = require('./routes/dishRouter');
+const dishRouter = require("./routes/dishRouter");
+const promoRouter = require("./routes/promoRouter");
 
 //creating express app
-const app =  express();
-
+const app = express();
 
 //body Parser setup
 app.use(express.json());
 
 //Setup Routers
-app.use('/dishes', dishRouter);
+app.use("/dishes", dishRouter);
+app.use("/promotions", promoRouter);
 
-
-//Listening 
-app.listen(3000, ()=>{
-    console.log('Listening on port 3000....');
-})
+//Listening
+app.listen(3000, () => {
+  console.log("Listening on port 3000....");
+});
